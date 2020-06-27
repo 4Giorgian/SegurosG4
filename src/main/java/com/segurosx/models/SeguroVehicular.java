@@ -1,6 +1,6 @@
 package com.segurosx.models;
 
-public class SeguroVehicular extends Seguro implements ISeguroVehicular {
+public abstract class SeguroVehicular extends Seguro implements ISeguroVehicular {
 
     public String marca;
     public String modelo;
@@ -32,11 +32,7 @@ public class SeguroVehicular extends Seguro implements ISeguroVehicular {
     }
     
     @Override
-    public String coberturaTerminada() {
+    public abstract String coberturaTerminada();
 
-        if( this.mesesDeUso.equals(23)) {
-            return "Si";
-        }
-        return "No";
-    }
+
 }
