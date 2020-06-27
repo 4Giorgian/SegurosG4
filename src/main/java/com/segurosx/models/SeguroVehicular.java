@@ -1,17 +1,20 @@
 package com.segurosx.models;
 
-public class SeguroVehicular extends Seguro {
+public class SeguroVehicular extends Seguro implements ISeguroVehicular {
 
+    public String marca;
+    public String modelo;
+    public Integer  mesesDeUso;
     
-    public SeguroVehicular(String marca, String modelo)    {
-
+    public SeguroVehicular(String marca, String modelo, Integer mesesDeUso)    {
         super();
         this.marca = marca;
         this.modelo = modelo;
+        this.mesesDeUso = mesesDeUso;
     }
 
     @Override
-    public void cacularRiesgo()   {
+    public void calcularRiesgo()   {
 
         if (this.marca.equals("Toyota") && this.modelo.equals("Yaris")) {
             this.nivelRiesgo = "ALTO";
@@ -24,6 +27,16 @@ public class SeguroVehicular extends Seguro {
     @Override
     public String getDetalleSeguro()    {
 
-        return "Seg. Vehicular Numero: " + this.numero + " con riesgo: " + this.nivelRiesgo;
-    }    
+        return "Seg. Vehicular Numero: " + this.numero + " con riesgo: " + this.nivelRiesgo + "cobertura terminada: " + this.coberturaTerminada();
+
+    }
+    
+    @Override
+    public String coberturaTerminada() {
+
+        if( this.mesesDeUso.equals(23)) {
+            return "Si";
+        }
+        return "No";
+    }
 }
