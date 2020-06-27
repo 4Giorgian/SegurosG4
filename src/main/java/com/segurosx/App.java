@@ -3,6 +3,7 @@ package com.segurosx;
 import com.segurosx.models.Cliente;
 import com.segurosx.models.SeguroTarjeta;
 import com.segurosx.models.SeguroVehicular;
+import com.segurosx.models.*;
 
 /**
  * HRCS
@@ -25,5 +26,19 @@ public class App
 
         cliente.getListaSeguroCliente();
 
+
+        //Pregunta 6:
+
+        Certificado cert = new Certificado();
+        Contrato contrato = new Contrato();
+
+        Poliza poliza = new Poliza();
+
+        Seguro seg = new SeguroTarjeta("BBVA");
+        
+        seg.setDocumento(cert);
+        seg.setDocumento(contrato);
+
+        seg.setPoliza(poliza);
    }
 }

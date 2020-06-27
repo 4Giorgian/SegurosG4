@@ -5,27 +5,37 @@ import java.util.Random;
 public abstract class Seguro {
 
     protected Integer numero;
-    protected Certificado certificado;
-    protected Poliza poliza;
+    protected IDoc doc;
+    protected IPoliza poliza;
     protected String nivelRiesgo = "NINGUNO";
 
     public Seguro() {
         this.numero = new Integer(new Random().nextInt());
     }
 
-    public Certificado getCertificado() {
-        return certificado;
+    public IDoc getDocumento() {
+        return doc;
     }
 
-    public void setCertificado(Certificado certificado) {
+    /*
+    public void setCertificado(Certificado certificado) { // No cumple con inversión de dependencias
         this.certificado = certificado;
     }
+    */
 
-    public Poliza getPoliza() {
-        return poliza;
+    public void setDocumento(IDoc doc) { // No cumple con inversión de dependencias
+        this.doc = doc;
     }
 
+    public IPoliza getPoliza() {
+        return poliza;
+    }
+/*
     public void setPoliza(Poliza poliza) {
+        this.poliza = poliza;
+    }
+*/
+    public void setPoliza(IPoliza poliza) {
         this.poliza = poliza;
     }
 
