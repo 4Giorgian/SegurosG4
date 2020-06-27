@@ -39,4 +39,18 @@ public class SeguroVehicular extends Seguro implements ISeguroVehicular {
         }
         return "No";
     }
+
+    @Override
+    public void distribucionMensualidadPrima() {
+           /*
+       HOT FIX
+       Distribuir la prima en 12 meses
+       */
+    }
+
+    @Override
+    public float getPrima() {
+        return (float)20.01;
+    }
+
 }

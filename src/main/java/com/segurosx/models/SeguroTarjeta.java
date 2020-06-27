@@ -36,4 +36,16 @@ public class SeguroTarjeta extends Seguro implements ISeguroTarjeta {
         }
     }
 
+    @Override
+    public void distribucionMensualidadPrima() {
+           /*
+       HOT FIX
+       Distribuir la prima en 12 meses
+       */
+    }
+
+    @Override
+    public float getPrima() {
+        return (float)2121.01;
+    }
 }

@@ -2,7 +2,7 @@ package com.segurosx.models;
 
 import java.util.Random;
 
-public abstract class Seguro {
+public abstract class Seguro implements ICalculoPrima {
 
     protected Integer numero;
     protected Certificado certificado;
@@ -45,4 +45,10 @@ public abstract class Seguro {
 
     public abstract void calcularRiesgo();
 
+    public abstract void distribucionMensualidadPrima();
+
+    public float calcularPrima(ICalculoPrima calculador){
+        float prima = calculador.getPrima();
+        return prima;
+    }
 }
